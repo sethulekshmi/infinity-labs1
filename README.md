@@ -1,4 +1,4 @@
-Car Lease Demo
+Diamond Trading Demo
 =======
 
 ##Deploying the demo##
