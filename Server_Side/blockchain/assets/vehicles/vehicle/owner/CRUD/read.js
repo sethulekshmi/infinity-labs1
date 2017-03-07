@@ -3,5 +3,5 @@
 let read = require(__dirname+'/../../property/read');
 
 exports.read = function(req, res, next, usersToSecurityContext) {
-    return read(req, res, next, usersToSecurityContext, 'location');
+    return read(req, res, next, usersToSecurityContext, 'owner');
 };
