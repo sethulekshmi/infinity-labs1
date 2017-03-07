@@ -36,11 +36,11 @@ function loadAssets()
 					{
 						if(obj.status == 0)
 						{
-							obj.VIN = '&lt;<i>VIN</i>&gt;';
-							obj.make = '&lt;<i>make</i>&gt;';
-							obj.model = '&lt;<i>model</i>&gt;';
+							obj.VIN = '&lt;<i>diamondat</i>&gt;';
+							obj.make = '&lt;<i>clarity</i>&gt;';
+							obj.model = '&lt;<i>cut</i>&gt;';
 							obj.colour = '&lt;<i>colour</i>&gt;';
-							obj.reg = '&lt;<i>registration</i>&gt;';
+							obj.reg = '&lt;<i>location</i>&gt;';
 							objects.push(obj);
 						}
 					}
@@ -139,12 +139,12 @@ function loadUpdateAssets()
 			for(var i = 0; i < d.length; i++)
 			{
 				var data = d[i];
-				if(data.VIN == 0) data.VIN = '&lt;<i>VIN</i>&gt;';
-				if(data.make.toLowerCase() == 'undefined' || data.make.trim() == '') data.make = '&lt;<i>make</i>&gt;';
-				if(data.model.toLowerCase() == 'undefined' || data.model.trim() == '') data.model = '&lt;<i>model</i>&gt;';
-				if(data.reg.toLowerCase() == 'undefined' || data.reg.trim() == '') data.reg = '&lt;<i>registration</i>&gt;';
+				if(data.diamondat == 0) data.diamondat = '&lt;<i>diamondat</i>&gt;';
+				if(data.clarity.toLowerCase() == 'undefined' || data.clarity.trim() == '') data.clarity = '&lt;<i>clarity</i>&gt;';
+				if(data.cut.toLowerCase() == 'undefined' || data.cut.trim() == '') data.cut = '&lt;<i>cut</i>&gt;';
+				if(data.location.toLowerCase() == 'undefined' || data.location.trim() == '') data.location = '&lt;<i>location</i>&gt;';
 				if(data.colour.toLowerCase() == 'undefined' || data.colour.trim() == '') data.colour = '&lt;<i>colour</i>&gt;';
-				$('<tr class="foundCars" ><td class="smlBrk"></td><td class="editRw" ><span class="carID">'+data.v5cID+'</span></td><td class="editRw" colspan="2" >[<span class="carVin">'+data.VIN+'</span>] <span class="carMake">'+data.make+'</span> <span class="carModel">'+data.model+'</span>, <span class="carColour">'+data.colour+'</span>, <span class="carReg">'+data.reg+'</span><img src="Icons/Manufacturer/edit.svg" onclick="showEditTbl(this)" class="rtBtn" width="20" height="20" /></td><td class="smlBrk" ></td></tr>').insertAfter('#insAft');
+				$('<tr class="foundCars" ><td class="smlBrk"></td><td class="editRw" ><span class="carID">'+data.v5cID+'</span></td><td class="editRw" colspan="2" >[<span class="carDiamondat">'+data.diamondat+'</span>] <span class="carClarity">'+data.clarity+'</span> <span class="carCut">'+data.cut+'</span>, <span class="carColour">'+data.colour+'</span>, <span class="carLocation">'+data.location+'</span><img src="Icons/Manufacturer/edit.svg" onclick="showEditTbl(this)" class="rtBtn" width="20" height="20" /></td><td class="smlBrk" ></td></tr>').insertAfter('#insAft');
 			}
 		}
 	}
