@@ -21,52 +21,52 @@ function showEditTbl(el)
 	$('#chooseOptTbl').fadeIn(1000);
 	$('#fade').fadeIn(1000);
 	$('#v5cID').val($(el).parent().parent().find('.carID').html());
-	if($(el).siblings('.carVin').html() != '&lt;<i>VIN</i>&gt;')
+	if($(el).siblings('.carDiamondat').html() != '&lt;<i>diamondat</i>&gt;')
 	{
-		$('#vin').prop('readonly', true);
-		$('#vin').css('cursor', 'not-allowed');
+		$('#diamondat').prop('readonly', true);
+		$('#diamondat').css('cursor', 'not-allowed');
 	}
 	else
 	{
-		$('#vin').prop('readonly', false);
-		$('#vin').css('cursor', 'text');
+		$('#diamondat').prop('readonly', false);
+		$('#diamondat').css('cursor', 'text');
 	}
-	var vin = $(el).siblings('.carVin').html()
-	if(vin == '&lt;<i>VIN</i>&gt;')
+	var diamondat = $(el).siblings('.carDiamondat').html()
+	if(diamondat == '&lt;<i>diamondat</i>&gt;')
 	{
-		vin = 0;
+		diamondat = 0;
 	}
-	var make = $(el).siblings('.carMake').html()
-	if(make == '&lt;<i>make</i>&gt;')
+	var clarity = $(el).siblings('.carClarity').html()
+	if(clarity == '&lt;<i>clarity</i>&gt;')
 	{
-		make = 'undefined'
+		clarity = 'undefined'
 	}
-	var model = $(el).siblings('.carModel').html()
-	if(model == '&lt;<i>model</i>&gt;')
+	var cut = $(el).siblings('.carCut').html()
+	if( cut== '&lt;<i>cut</i>&gt;')
 	{
-		model = 'undefined'
+		cut = 'undefined'
 	}
 	var colour = $(el).siblings('.carColour').html()
 	if(colour == '&lt;<i>colour</i>&gt;')
 	{
 		colour = 'undefined'
 	}
-	var reg = $(el).siblings('.carReg').html()
-	if(reg == '&lt;<i>registration</i>&gt;')
+	var location = $(el).siblings('.carLocation').html()
+	if(location== '&lt;<i>location</i>&gt;')
 	{
-		reg = 'undefined'
+		location = 'undefined'
 	}
-	$('#vin').val(vin);
-	$('#make').val(make);
-	$('#model').val(model);
+	$('#diamondat').val(diamondat);
+	$('#clarity').val(clarity);
+	$('#cut').val(cut);
 	$('#colour').val(colour);
-	$('#reg').val(reg);
+	$('#location').val(location);
 	
-	$('#hidVin').val(vin);
-	$('#hidMake').val(make);
-	$('#hidModel').val(model);
+	$('#hidDiamondat').val(diamondat);
+	$('#hidClarity').val(clarity);
+	$('#hidCut').val(cut);
 	$('#hidColour').val(colour);
-	$('#hidReg').val(reg.toUpperCase());
+	$('#hidLocation').val(location.toUpperCase());
 }
 
 function closeEditTbl()
@@ -86,40 +86,40 @@ function validate(el)
 	
 	$('#errorRw').html('<ul></ul>');
 	var failed = false;
-	if(isNaN(parseInt($('#vin').val().trim())))
+	if(isNaN(parseInt($('#diamondat').val().trim())))
 	{
-		$('#errorRw').find('ul').append('<li>VIN must be a number</li>')
+		$('#errorRw').find('ul').append('<li>diamondat must be a number</li>')
 		failed = true;
 	}
-	if($('#vin').val().trim().length != 15 && $('#vin').val().trim() != 0)
+	if($('#diamondat').val().trim().length != 15 && $('#diamondat').val().trim() != 0)
 	{
 		
-		$('#errorRw').find('ul').append('<li>VIN must be 15 characters (Currently ' + $('#vin').val().trim().length + ' characters)</li>')
+		$('#errorRw').find('ul').append('<li>diamondat must be 15 characters (Currently ' + $('#diamondat').val().trim().length + ' characters)</li>')
 		failed = true;
 	}
-	if($('#vin').val().trim() == 0 && $('#hidVin').val().trim() != 0)
+	if($('#diamondat').val().trim() == 0 && $('#hidDiamondat').val().trim() != 0)
 	{
-		$('#errorRw').find('ul').append('<li>VIN cannot be reset to 0</li>')
+		$('#errorRw').find('ul').append('<li>diamondat cannot be reset to 0</li>')
 		failed = true;
 	}
-	if($('#make').val().trim() == '')
+	if($('#clarity').val().trim() == '')
 	{
-		$('#errorRw').find('ul').append('<li>Make cannot be blank</li>')
+		$('#errorRw').find('ul').append('<li>Clarity cannot be blank</li>')
 		failed = true;
 	}
-	if($('#make').val().trim().toLowerCase() == 'undefined' && $('#hidMake').val().trim().toLowerCase() != 'undefined')
+	if($('#clarity').val().trim().toLowerCase() == 'undefined' && $('#hidClarity').val().trim().toLowerCase() != 'undefined')
 	{
-		$('#errorRw').find('ul').append('<li>Make cannot be reset to undefined</li>')
+		$('#errorRw').find('ul').append('<li>Clarity cannot be reset to undefined</li>')
 		failed = true;
 	}
-	if($('#model').val().trim() == '')
+	if($('#cut').val().trim() == '')
 	{
-		$('#errorRw').find('ul').append('<li>Model cannot be blank</li>')
+		$('#errorRw').find('ul').append('<li>Cut cannot be blank</li>')
 		failed = true;
 	}
-	if($('#model').val().trim().toLowerCase() == 'undefined' && $('#hidModel').val().trim().toLowerCase() != 'undefined')
+	if($('#cut').val().trim().toLowerCase() == 'undefined' && $('#hidCut').val().trim().toLowerCase() != 'undefined')
 	{
-		$('#errorRw').find('ul').append('<li>Model cannot be reset to undefined</li>')
+		$('#errorRw').find('ul').append('<li>Cut cannot be reset to undefined</li>')
 		failed = true;
 	}
 	if($('#colour').val().trim() == '')
@@ -132,20 +132,20 @@ function validate(el)
 		$('#errorRw').find('ul').append('<li>Colour cannot be reset to undefined</li>')
 		failed = true;
 	}
-	if($('#reg').val().trim() == '')
+	if($('#location').val().trim() == '')
 	{
-		$('#errorRw').find('ul').append('<li>Registration cannot be blank</li>')
+		$('#errorRw').find('ul').append('<li>Location cannot be blank</li>')
 		failed = true;
 	}
-	if($('#reg').val().trim().toLowerCase() == 'undefined' && $('#hidReg').val().trim().toLowerCase() != 'undefined')
+	if($('#location').val().trim().toLowerCase() == 'undefined' && $('#hidLocation').val().trim().toLowerCase() != 'undefined')
 	{
-		$('#errorRw').find('ul').append('<li>Registration cannot be reset to undefined</li>')
+		$('#errorRw').find('ul').append('<li>Location cannot be reset to undefined</li>')
 		failed = true;
 	}
 	if(!failed)
 	{
 		$('#errorRw').hide();
-		updateAsset($('#vin').val().trim(), $('#make').val().trim(), $('#model').val().trim(), $('#colour').val().trim(), $('#reg').val().trim().toUpperCase(), $('#v5cID').val(), el)
+		updateAsset($('#diamondat').val().trim(), $('#clarity').val().trim(), $('#cut').val().trim(), $('#colour').val().trim(), $('location').val().trim().toUpperCase(), $('#v5cID').val(), el)
 	}
 	else
 	{
