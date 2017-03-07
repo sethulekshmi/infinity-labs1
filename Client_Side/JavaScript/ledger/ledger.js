@@ -181,29 +181,29 @@ function getTransactions(){
 						type = "Create";
 						function_name = "create_vehicle";
 					}
-					if(payload.indexOf("update_make") != -1)
+					if(payload.indexOf("update_clarity") != -1)
 					{
 						type = "Update";
-						function_name = "update_make";
-						update_type = "Make";
+						function_name = "update_clarity";
+						update_type = "Clarity";
 					}
-					if(payload.indexOf("update_model") != -1)
+					if(payload.indexOf("update_cut") != -1)
 					{
 						type = "Update";
-						function_name = "update_model";
-						update_type = "Model";
+						function_name = "update_cut";
+						update_type = "Cut";
 					}
-					if(payload.indexOf("update_registration") != -1)
+					if(payload.indexOf("update_location") != -1)
 					{
 						type = "Update";
-						function_name = "update_registration";
-						update_type = "Registration";
+						function_name = "update_location";
+						update_type = "Location";
 					}
-					if(payload.indexOf("update_vin") != -1)
+					if(payload.indexOf("update_diamondat") != -1)
 					{
 						type = "Update";
-						function_name = "update_vin";
-						update_type = "VIN";
+						function_name = "update_diamondat";
+						update_type = "Diamondat";
 					}
 					if(payload.indexOf("update_colour") != -1)
 					{
@@ -236,12 +236,12 @@ function getTransactions(){
 
 					if(type == "Transfer")
 					{
-						var vin = get_update("vin", v5cID);
-						var make = get_update("make", v5cID);
-						var model = get_update("model", v5cID);
-						var reg = get_update("registration", v5cID);
+						var diamondat = get_update("diamondat", v5cID);
+						var clarity = get_update("clarity", v5cID);
+						var cut = get_update("cut", v5cID);
+						var location = get_update("location", v5cID);
 						var colour = get_update("colour", v5cID);
-						var carDetails = '['+vin+'] '+make+' '+model+', '+reg+', '+colour
+						var carDetails = '['+diamondat+'] '+clarity+' '+cut+', '+location+', '+colour
 						
 						if(carDetails.indexOf('undefined') != -1)
 						{
