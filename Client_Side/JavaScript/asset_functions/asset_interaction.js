@@ -298,7 +298,7 @@ function scrapAsset()
 
 let bigData;
 let increment;
-function updateAsset(diamondat, carat, cut, colour, location, v5cID, el)
+function updateAsset(diamondat, clarity, cut, colour, location, v5cID, el)
 {
 	/*
 	Formats the transaction request to update an attribute of a V5C. The logic on who can update what is contained within the contract on the blockchain.
@@ -308,7 +308,7 @@ function updateAsset(diamondat, carat, cut, colour, location, v5cID, el)
     $('#loaderMessages').html('');
 
 
-    bigData = [{'value':diamondat,'field':'diamondat', 'title': 'Diamondat','v5cID':v5cID},{'value':carat,'field':'carat', 'title': 'Carat','v5cID':v5cID},{'value':cut,'field':'cut', 'title': 'Cut','v5cID':v5cID},{'value':colour,'field':'colour', 'title': 'Colour','v5cID':v5cID},{'value':location,'field':'location', 'title': 'Location','v5cID':v5cID}];
+    bigData = [{'value':diamondat,'field':'diamondat', 'title': 'Diamondat','v5cID':v5cID},{'value':clarity,'field':'clarity', 'title': 'Clarity','v5cID':v5cID},{'value':cut,'field':'cut', 'title': 'Cut','v5cID':v5cID},{'value':colour,'field':'colour', 'title': 'Colour','v5cID':v5cID},{'value':location,'field':'location', 'title': 'Location','v5cID':v5cID}];
     increment=0;
 
     for(var i = bigData.length-1; i >= 0; i--)
