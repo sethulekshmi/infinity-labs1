@@ -36,17 +36,17 @@ function loadAssets()
 					{
 						if(obj.status == 0)
 						{
-							obj.VIN = '&lt;<i>diamondat</i>&gt;';
-							obj.make = '&lt;<i>clarity</i>&gt;';
-							obj.model = '&lt;<i>cut</i>&gt;';
+							obj.diamondat = '&lt;<i>diamondat</i>&gt;';
+							obj.clarity = '&lt;<i>clarity</i>&gt;';
+							obj.cut = '&lt;<i>cut</i>&gt;';
 							obj.colour = '&lt;<i>colour</i>&gt;';
-							obj.reg = '&lt;<i>location</i>&gt;';
+							obj.location = '&lt;<i>location</i>&gt;';
 							objects.push(obj);
 						}
 					}
 					else
 					{
-						if(typeof obj.message == 'undefined' && obj.VIN > 0 && obj.make.toLowerCase() != 'undefined' && obj.make.trim() != '' && obj.model.toLowerCase() != 'undefined' && obj.model.trim() != '' && obj.reg.toLowerCase() != 'undefined' && obj.reg.trim() != '' && obj.colour.toLowerCase() != 'undefined' && obj.colour.trim() != '' && !obj.scrapped)
+						if(typeof obj.message == 'undefined' && obj.diamondat > 0 && obj.clarity.toLowerCase() != 'undefined' && obj.clarity.trim() != '' && obj.cut.toLowerCase() != 'undefined' && obj.cut.trim() != '' && obj.location.toLowerCase() != 'undefined' && obj.location.trim() != '' && obj.colour.toLowerCase() != 'undefined' && obj.colour.trim() != '' && !obj.scrapped)
 						{
 							objects.push(obj)
 						}
@@ -75,7 +75,7 @@ function loadAssets()
 				for(var i = 0; i < objects.length; i++)
 				{
 					var data = objects[i];
-					$("#vhclsTbl").append("<tr class='vehRw'><td class='vin'>"+data.VIN+"</td><td class='vehDets' ><span class='carInfo'>" + data.make + "</span><span class='carInfo'>" + data.model + ", </span><span class='carInfo'>" + data.colour + ", </span><span class='carInfo'>" + data.reg + "</span></td><td class='chkHldr'><span class='chkSpc' ></span><span class='chkBx' ></span><input class='isChk' type='hidden' value='false' /><input class='v5cID' type='hidden' value='"+data.v5cID+"' /></td></tr>");
+					$("#vhclsTbl").append("<tr class='vehRw'><td class='diamondat'>"+data.diamondat+"</td><td class='vehDets' ><span class='carInfo'>" + data.clarity + "</span><span class='carInfo'>" + data.cut + ", </span><span class='carInfo'>" + data.colour + ", </span><span class='carInfo'>" + data.location + "</span></td><td class='chkHldr'><span class='chkSpc' ></span><span class='chkBx' ></span><input class='isChk' type='hidden' value='false' /><input class='v5cID' type='hidden' value='"+data.v5cID+"' /></td></tr>");
 				}
 				changeBarSize();
 			}
