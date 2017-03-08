@@ -28,7 +28,7 @@ let simple_scenario = {
 			"Colour": "Blue",
 			"Clarity": "SI1",
 			"Location":"abf" 
-			"JewelleryType": "earrings",
+			
 			"Owners": ["Kollur","soham_industrial_diamonds","Beon_Group","Shah","Ajay_Gosh","Crayon_Bros_Ltd","Adora","Adwaith"]
 		}
 	]
